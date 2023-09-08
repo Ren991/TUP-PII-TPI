@@ -8,6 +8,9 @@ libro3 = {'cod': 'adOd09UE', 'cant_ej_ad': 0, 'cant_ej_pr': 0, "titulo": "El có
 
 def nuevo_libro():
     #completar
+    #Se crea el objeto nuevoLibro con las propiedades solicitadas
+    #Para generar el código se usa la funcion cod_generator importada del archivo cod_generator.py que usa la libreria generator.
+    #Se retorna el nuevo libro 
     nuevoLibro = {'cod': cod_generator.generar() ,'cant_ej_ad': int(input("ingresa la cantidad de ejemplares adquiridos: ")),
      'cant_ej_pr': int(input("ingresa la cantidad de ejemplares prestados: ")), 
      'titulo': input("ingrese titulo del libro: "),

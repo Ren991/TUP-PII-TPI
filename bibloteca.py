@@ -13,13 +13,20 @@ libros.append(l.libro3)
 
 def ejemplares_prestados():
     # completar
+    #Se recorre el array libros y se busca que la propiedad cant_ej_pr de los objetos tenga un valor mayor a 0
+    
     for libro in libros:
         if libro.get("cant_ej_pr") > 0:
             print("Nombre : " + libro.get("titulo") + " || Cantidad prestados : " + str(libro.get("cant_ej_pr")))
     return None
 
 def registrar_nuevo_libro():
+
+    # A la variable nuevo_libro se le asigna el return de la función nuevo.libro() del archivo libro.py
+    # Luego se añade al array
+
     nuevo_libro = l.nuevo_libro()
+
     libros.append(nuevo_libro)
     print(libros)
     #completar
@@ -27,6 +34,9 @@ def registrar_nuevo_libro():
 
 def eliminar_ejemplar_libro():
     #completar
+    #Se le pide el código del libro al usuario
+    #Se recorre el array , si encuentra ese codigo valida la propiedad cant_ej_ad.
+    #Si no encuentra el código devuelve mensaje.
 
     libroAEliminar = input("Ingrese código del libro del cual quiere eliminar un ejemplar: ")
     
@@ -57,6 +67,12 @@ def eliminar_ejemplar_libro():
 def prestar_ejemplar_libro():
     #completar
     
+    #Se le pide el código del libro al usuario
+    #Se recorre el array , si encuentra ese codigo valida que haya libros disponibles para prestar.
+    #Si hay libros disponibles se le suma una unidada la propiedad -> cant_ej_pr
+    #Si no encuentra el código ingresado devuelve mensaje.
+
+
     libroAPrestar = input("Ingrese código del libro a prestar: ")
     
     encontro = False
@@ -69,7 +85,7 @@ def prestar_ejemplar_libro():
             print("Cantidad Disponible:", cantidadDisponible)
 
             if cantidadDisponible <= 0:
-                print("El libro " + libro.get("titulo") + "no tiene ejemplares disponbles")
+                print("El libro = " + libro.get("titulo") + " || no tiene ejemplares disponbles")
             else:
                 libro["cant_ej_pr"] += 1
                 print("Se confirmó el prestamo del libro")
@@ -85,6 +101,11 @@ def prestar_ejemplar_libro():
     return None
 
 def devolver_ejemplar_libro():
+
+    #Se le pide el código del libro al usuario
+    #Se recorre el array , si encuentra ese codigo valida que la cantidad de prestados sea mayor a 0.
+    #Si hay libros para devolver se le resta una unidada la propiedad -> cant_ej_pr
+    #Si no encuentra el código ingresado devuelve mensaje.
 
     libroADevolver = input("Ingrese código del libro a devolver: ")
     

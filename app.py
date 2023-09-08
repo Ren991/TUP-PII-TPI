@@ -1,5 +1,4 @@
 # Trabajo Práctico I - Programación II
-# commit 1
 
 import os
 import bibloteca as biblioteca 
@@ -39,6 +38,7 @@ while respuesta != "salir":
         elif int(opt) == 5:
             #completar
             biblioteca.ejemplares_prestados()
+            
             print()
         elif int(opt) == 6:
             respuesta = "salir"
