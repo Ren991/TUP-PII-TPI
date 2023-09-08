@@ -11,8 +11,8 @@ def menu():
     print("1 - Gestionar Prestamo")
     print("2 - Gestionar Devolucion")
     print("3 - Registrar nuevo libro")
-    print("4 - Elimiar ejemplar")
-    print("5 - Mostrar ejemplares perstados")
+    print("4 - Eliminar ejemplar")
+    print("5 - Mostrar ejemplares prestados")
     print("6 - Salir")
 
 while respuesta != "salir":
@@ -34,9 +34,11 @@ while respuesta != "salir":
             print()
         elif int(opt) == 4:
             #completar
+            biblioteca.eliminar_ejemplar_libro()
             print()
         elif int(opt) == 5:
             #completar
+            biblioteca.ejemplares_prestados()
             print()
         elif int(opt) == 6:
             respuesta = "salir"

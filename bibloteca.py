@@ -13,6 +13,9 @@ libros.append(l.libro3)
 
 def ejemplares_prestados():
     # completar
+    for libro in libros:
+        if libro.get("cant_ej_pr") > 0:
+            print("Nombre : " + libro.get("titulo") + " || Cantidad prestados : " + str(libro.get("cant_ej_pr")))
     return None
 
 def registrar_nuevo_libro():
@@ -24,7 +27,31 @@ def registrar_nuevo_libro():
 
 def eliminar_ejemplar_libro():
     #completar
+
+    libroAEliminar = input("Ingrese código del libro del cual quiere eliminar un ejemplar: ")
     
+    encontro = False
+    for libro in libros:
+        if libroAEliminar == libro.get("cod"):
+            
+            
+          
+
+            if libro["cant_ej_ad"] <= 0:
+                print("El libro " + libro.get("titulo") + " no tiene ejemplares")
+            else:
+                libro["cant_ej_ad"] -= 1
+                print("Se confirmó la eliminacion del ejemplar")
+
+
+
+            encontro = True
+       
+
+    if encontro == False: 
+        print("No se encontró el libro")
+    print(libros)
+
     return None
 
 def prestar_ejemplar_libro():
